@@ -4,7 +4,7 @@ var express = require("express");
 var emprouter =  express();
 
 const connection = mysql.createConnection({
-    host     : 'localhost',
+    host     : '172.17.0.1',
     user     : 'root',
     password : 'root',
     database : 'app_db'
