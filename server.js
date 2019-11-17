@@ -2,7 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 var product=require('./product')
 const app = express()
-app.use('/product',product)
+
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*"); 
     res.header("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE");
@@ -11,7 +11,7 @@ app.use(function(req, res, next) {
     next();
   });
   app.use(bodyParser.json())
-
+  app.use('/product',product)
   app.get('/', function(req, res) {
     // Handle the get for this route
     res.send(`<h1>Welcome</h1>`);
